@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #f2c57c;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to left top , #ddae7e ,  #7fb685);
+}
+
+.box{
+    position: relative;
+}
+
+.clock{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #426a5a;
+    border: 2px solid #668b7c86;
+    box-shadow: 0 0 30px #426a5a;
+}
+
+.clock span{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+    text-align: center;
+}
+
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 20px;
+}
+
+.clock::before{
+    z-index: 2;
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: aliceblue;
+}
+
+.hand i{
+    position: absolute;
+    background: var(--clr);
+    width: 4px;
+    height: var(--h);
+    border-radius: 8px;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Using only the 5 colors provided */
+#hour {
+    --clr: #ef6f6c; /* Color 1 */
+    --h: 74px;
+}
+
+#mint {
+    --clr: #426a5a; /* Color 2 */
+    --h: 84px;
+}
+
+#sec {
+    --clr: #7fb685; /* Color 3 */
+    --h: 94px;
+}
+
+#hour2 {
+    --clr: #ddae7e; /* Color 4 */
+    --h: 74px;
+}
+
+#mint2 {
+    --clr: #f2c57c; /* Color 5 */
+    --h: 84px;
+}
